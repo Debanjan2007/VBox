@@ -7,6 +7,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { HeroTtile } from './hero-title'
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import { OrbitingCircles } from "@/components/ui/orbiting-circles"
+import { RippleButton } from "@/components/ui/ripple-button"
 
 export default function Home() {
   return (
@@ -26,11 +27,11 @@ export default function Home() {
             <Link href="/doc">Docs</Link>
           </div>
           <div className=" action-buttons flex gap-4">
-            <Button variant="outline" size="lg">
+            <RippleButton className="h-10 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2">
               <Link href="/login" className="cursor-pointer">
                 Login
               </Link>
-            </Button>
+            </RippleButton>
             <Link href="/signup">
               <InteractiveHoverButton>Get started</InteractiveHoverButton>
             </Link>
