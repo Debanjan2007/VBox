@@ -10,10 +10,12 @@ import { RippleButton } from "@/components/ui/ripple-button"
 import { Marquee } from "@/components/ui/marquee"
 import { WorkspaceCard } from "./WorkspaceCard"
 import { MarqueOS } from "./Marque-children-data"
+import { ToolCard } from  "./ToolCard"
+import { tools } from "./Tools-children-data"
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col flex-1 min-h-screen items-stretch w-screen h-screen justify-start bg-zinc-50 font-sans dark:bg-[#08101D] overflow-hidden">
+    <div className="relative flex flex-col flex-1 min-h-screen items-stretch w-full justify-start bg-zinc-50 font-sans dark:bg-[#08101D] overflow-hidden">
       <nav className="h-18 w-full">
         <div className="navbar mx-auto h-full w-full px-6 flex items-center justify-between">
           <div className="logo hidden md:flex text-xl gap-2 font-bold text-white cursor-pointer">
@@ -192,6 +194,13 @@ export default function Home() {
               MarqueOS.map((os) => <WorkspaceCard key={os.name} obj={os}/>)
             }
           </Marquee>
+          <br/>
+          <Marquee pauseOnHover className="[--duration:20s]" reverse>
+            {
+              tools.map((os) => <ToolCard key={os.name} obj={os}/>)
+            }
+          </Marquee>
+
         </div>
       </main>
     </div >

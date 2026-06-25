@@ -10,11 +10,6 @@
         info: "Ready in <20s"
     },
     {
-        name: "VS code",
-        avatar: "/vscode.png",
-        info:"Browser Based"
-    },
-    {
         name: "Python",
         avatar: "/python.png",
         info: "Sandbox dry run"
@@ -25,9 +20,14 @@
         info: "Node environment"
     },
     {
-        name: "Docker",
-        avatar: "/docker.png",
-        info: "Complete Isolated"
+        name: "Arch",
+        avatar: "/arch.png",
+        info: "Secure OS",
+    },
+    {
+        name: "Debian",
+        avatar: "/debian.png",
+        info: "Debian at your browser"
     }
 ]
 
