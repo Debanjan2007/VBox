@@ -4,17 +4,17 @@ import { Button } from "@/components/ui/button";
 
 export function HeroTtile() {
     return <>
-        <div className="container w-full h-full p-6 z-99">
+        <div className="container w-full h-full z-99">
             <div className="max-w-xl space-y-6">
                 <div>
                     <p className="text-sm text-gray-400 mb-3">
                         Modern way to operate securely
                     </p>
 
-                    <h1 className="text-5xl font-bold leading-tight text-white">
-                        Secure Browser/OS
+                    <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+                        Spin Up Linux, Browsers
                         <br />
-                        Try Anything locally
+                        Dev Environments Instantly
                     </h1>
 
                     <p className="mt-4 text-gray-400 text-lg leading-relaxed">

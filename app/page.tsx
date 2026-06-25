@@ -2,25 +2,13 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
 import { MobileMenu } from "./MobileNav"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { HeroTtile } from './hero-title'
-import { AnimatedBeam } from "@/components/ui/animated-beam"
-import { Globe, User } from 'lucide-react';
-import { File, Search, Settings } from "lucide-react"
 
 import { OrbitingCircles } from "@/components/ui/orbiting-circles"
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const leftRef = useRef<HTMLDivElement>(null);
-  const userRef = useRef<HTMLDivElement>(null);
-  const VboxRef = useRef<HTMLDivElement>(null);
-  const ubuntuRef = useRef<HTMLDivElement>(null);
-  const braveRef = useRef<HTMLDivElement>(null);
-  const windowsRef = useRef<HTMLDivElement>(null);
   return (
     <div className="flex flex-col flex-1 min-h-screen items-stretch w-screen h-screen justify-start bg-zinc-50 font-sans dark:bg-[#08101D] overflow-hidden">
       <nav className="h-18 w-full">
@@ -49,9 +37,11 @@ export default function Home() {
           </div>
         </div>
       </nav>
+      {/* main hero section here */}
       <main>
+        {/* first who are we part */}
         <div
-          className="hero w-full h-full px-8 py-8 flex flex-col gap-14 md:grid grid-cols-2 gap-2 mt-6 px-12 py-8">
+          className="hero w-full h-full flex flex-col gap-14 mt-6 px-4 py-8 md:grid md:grid-cols-2 md:px-12 lg:px-16">
           <div className="first w-full h-full flex-1">
             <HeroTtile />
           </div>
@@ -60,7 +50,7 @@ export default function Home() {
             <div className="hidden md:flex h-[500px] relative w-full items-center justify-center overflow-hidden">
               {/* Center VBox */}
               <div className="z-20 flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
-                <Image 
+                <Image
                   src="/logo.png"
                   alt="VBox"
                   height={36}
@@ -71,60 +61,62 @@ export default function Home() {
               {/* Orbiting OS logos */}
               <OrbitingCircles radius={140}>
                 <Image
-                src="/ubuntu.png" 
-                height={32}
-                width={32}
-                className="rounded"
-                alt="ubutnu"
+                  src="/ubuntu.png"
+                  height={32}
+                  width={32}
+                  className="rounded"
+                  alt="ubutnu"
                 />
                 <Image
-                src="/win-10.png" 
-                height={32}
-                width={32}
-                className="rounded"
-                alt="wiondows"
+                  src="/win-10.png"
+                  height={32}
+                  width={32}
+                  className="object-contain"
+                  alt="wiondows"
                 />
                 <Image
-                src="/fedora.png" 
-                height={32}
-                width={32}
-                className="rounded"
-                alt="fedora"
+                  src="/fedora.png"
+                  height={32}
+                  width={32}
+                  className="rounded"
+                  alt="fedora"
                 />
                 <Image
-                src="/arch.png" 
-                height={32}
-                width={32}
-                className="rounded"
-                alt="arch"
+                  src="/arch.png"
+                  height={32}
+                  width={32}
+                  className="rounded"
+                  alt="arch"
                 />
               </OrbitingCircles>
 
               {/* Second ring */}
               <OrbitingCircles radius={220} reverse duration={30}>
                 <Image
-                src="/chrome.png" 
-                width={32}
-                height={32}
-                alt="chrome" />
+                  src="/chrome.png"
+                  width={32}
+                  height={32}
+                  alt="chrome"
+                  className="object-contain"
+                />
                 <Image
-                src="/brave.png" 
-                width={32}
-                height={32}
-                className="rounded-full"
-                alt="brave" />
+                  src="/brave.png"
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                  alt="brave" />
                 <Image
-                src="/firefox.png"
-                width={32}
-                height={32}
-                alt="feirefox" />
+                  src="/firefox.png"
+                  width={32}
+                  height={32}
+                  alt="feirefox" />
               </OrbitingCircles>
 
             </div>
             <div className="flex h-[500px] relative w-full items-center justify-center overflow-hidden md:hidden">
               {/* Center VBox */}
               <div className="z-20 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
-                <Image 
+                <Image
                   src="/logo.png"
                   alt="VBox"
                   height={30}
@@ -135,53 +127,53 @@ export default function Home() {
               {/* Orbiting OS logos */}
               <OrbitingCircles radius={130}>
                 <Image
-                src="/ubuntu.png" 
-                height={32}
-                width={32}
-                className="rounded"
-                alt="ubutnu"
+                  src="/ubuntu.png"
+                  height={32}
+                  width={32}
+                  className="rounded"
+                  alt="ubutnu"
                 />
                 <Image
-                src="/win-10.png" 
-                height={32}
-                width={32}
-                className="rounded"
-                alt="wiondows"
+                  src="/win-10.png"
+                  height={32}
+                  width={32}
+                  className="rounded"
+                  alt="wiondows"
                 />
                 <Image
-                src="/fedora.png" 
-                height={32}
-                width={32}
-                className="rounded"
-                alt="fedora"
+                  src="/fedora.png"
+                  height={32}
+                  width={32}
+                  className="rounded"
+                  alt="fedora"
                 />
                 <Image
-                src="/arch.png" 
-                height={32}
-                width={32}
-                className="rounded"
-                alt="arch"
+                  src="/arch.png"
+                  height={32}
+                  width={32}
+                  className="rounded"
+                  alt="arch"
                 />
               </OrbitingCircles>
 
               {/* Second ring */}
               <OrbitingCircles radius={60} reverse duration={30}>
                 <Image
-                src="/chrome.png" 
-                width={32}
-                height={32}
-                alt="chrome" />
+                  src="/chrome.png"
+                  width={32}
+                  height={32}
+                  alt="chrome" />
                 <Image
-                src="/brave.png" 
-                width={32}
-                height={32}
-                className="rounded-full"
-                alt="brave" />
+                  src="/brave.png"
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                  alt="brave" />
                 <Image
-                src="/firefox.png"
-                width={32}
-                height={32}
-                alt="feirefox" />
+                  src="/firefox.png"
+                  width={32}
+                  height={32}
+                  alt="feirefox" />
               </OrbitingCircles>
 
             </div>
