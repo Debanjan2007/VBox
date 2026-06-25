@@ -133,7 +133,7 @@ export default function Home() {
               </div>
 
               {/* Orbiting OS logos */}
-              <OrbitingCircles radius={130}>
+              <OrbitingCircles radius={140}>
                 <Image
                   src="/ubuntu.png"
                   height={32}
@@ -165,7 +165,7 @@ export default function Home() {
               </OrbitingCircles>
 
               {/* Second ring */}
-              <OrbitingCircles radius={60} reverse duration={30}>
+              <OrbitingCircles radius={70} reverse duration={30}>
                 <Image
                   src="/chrome.png"
                   width={32}
@@ -201,6 +201,8 @@ export default function Home() {
             }
           </Marquee>
 
+        </div>
+        <div className="bento-grid-section h-auto w-full p-2 flex flex-col md:grid md:grid-cols-2 md:gap-4">
         </div>
       </main>
     </div >
