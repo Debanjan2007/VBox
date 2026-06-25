@@ -5,12 +5,12 @@ import Image from "next/image";
 import { MobileMenu } from "./MobileNav"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { HeroTtile } from './hero-title'
-
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import { OrbitingCircles } from "@/components/ui/orbiting-circles"
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 min-h-screen items-stretch w-screen h-screen justify-start bg-zinc-50 font-sans dark:bg-[#08101D] overflow-hidden">
+    <div className="relative flex flex-col flex-1 min-h-screen items-stretch w-screen h-screen justify-start bg-zinc-50 font-sans dark:bg-[#08101D] overflow-hidden">
       <nav className="h-18 w-full">
         <div className="navbar mx-auto h-full w-full px-6 flex items-center justify-between">
           <div className="logo hidden md:flex text-xl gap-2 font-bold text-white cursor-pointer">
@@ -39,6 +39,9 @@ export default function Home() {
       </nav>
       {/* main hero section here */}
       <main>
+        <AnimatedGridPattern
+          className="absolute inset-0 opacity-35 text-slate-500/60 dark:text-slate-400/40"
+        />
         {/* first who are we part */}
         <div
           className="hero w-full h-full flex flex-col gap-14 mt-6 px-4 py-8 md:grid md:grid-cols-2 md:px-12 lg:px-16">
