@@ -13,6 +13,7 @@ import { MarqueOS } from "./Marque-children-data"
 import { ToolCard } from "./ToolCard"
 import { tools } from "./Tools-children-data"
 import { LaunchWorkspacePreview } from "./bento/LaunchWorkspacePreview"
+import { ToolsTamplete } from "./TampleteTool"
 
 export default function Home() {
   return (
@@ -207,19 +208,23 @@ export default function Home() {
         md:auto-rows-[20rem]
         lg:auto-rows-[22rem]
         grid-cols-1 p-2 md:grid md:grid-cols-2 gap-4">
-          <div className="w-full launch border-white/10 bg-white/[0.03] backdrop-blur-sm row-span-2">
+          <div className="w-full launch border-white/10 rounded-lg bg-white/[0.03] backdrop-blur-sm row-span-2">
             <LaunchWorkspacePreview />
           </div>
-          <div className="templates w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
+          <div className="templates rounded-lg w-full p-4 border-white/10 bg-white/[0.03] backdrop-blur-sm flex justify-center items-center">
+            <div className="items w-full h-full items-center grid grid-cols-1 gap:2 place-items-center md:grid md:grid-cols-2  md:gap-2">
+              {
+                ToolsTamplete.map((tool) => <ToolCard key={tool.name} obj={tool} className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />)
+              }
+            </div>
+          </div>
+          <div className="browser rounded-lg w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
             <div className="contain"></div>
           </div>
-          <div className="browser w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
+          <div className="infrustructure rounded-lg w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
             <div className="contain"></div>
           </div>
-          <div className="infrustructure w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
-            <div className="contain"></div>
-          </div>
-          <div className="isolation w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
+          <div className="isolation w-full rounded-lg border-white/10 bg-white/[0.03] backdrop-blur-sm">
             <div className="contain"></div>
           </div>
         </div>

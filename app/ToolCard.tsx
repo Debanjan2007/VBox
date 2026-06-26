@@ -8,9 +8,10 @@ interface ToolCardProps {
         avatar: string;
         info: string;
     };
+    className?: string
 }
 
-export function ToolCard({ obj }: ToolCardProps) {
+export function ToolCard({ obj , className = "h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" }: ToolCardProps ) {
     return (
         <div
             className="
@@ -64,13 +65,7 @@ export function ToolCard({ obj }: ToolCardProps) {
             </div>
 
             <div
-                className="
-          h-2
-          w-2
-          rounded-full
-          bg-cyan-400
-          shadow-[0_0_12px_rgba(34,211,238,0.8)]
-        "
+                className={className}
             />
         </div>
     );
