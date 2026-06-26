@@ -18,6 +18,8 @@ import { ToolsTamplete, ToolsTampleteSmall } from "./bento/TampleteTool"
 import { Safari } from "@/components/ui/safari"
 import { AnimatedInfa } from "./bento/AnimatedLine"
 import { IsolatedSessions } from "./bento/IsolatedSessions"
+import { Globe } from "@/components/ui/globe"
+import { marker } from "motion/react-client";
 
 export default function Home() {
   const [screenSize, setScreenSize] = useState(window.innerWidth)
@@ -27,6 +29,67 @@ export default function Home() {
       setScreenSize(screen)
     })()
   }, [])
+  const globeConfig = {
+    width: 600,
+    height: 600,
+
+    phi: 0,
+    theta: 0.25,
+
+    dark: 1,
+
+    diffuse: 1.2,
+
+    mapSamples: 20000,
+
+    mapBrightness: 6,
+
+    mapBaseBrightness: 0,
+
+    baseColor: [0.1, 0.2, 0.55],
+
+    markerColor: [0.3, 0.75, 1],
+
+    glowColor: [0.15, 0.45, 1],
+
+    opacity: 0.95,
+
+    scale: 1,
+
+    devicePixelRatio: 2,
+
+    offset: [0, 0],
+
+    markers: [
+      // Mumbai
+      {
+        location: [19.0760, 72.8777],
+        size: 0.08,
+      },
+
+      // Singapore
+      {
+        location: [1.3521, 103.8198],
+        size: 0.08,
+      },
+
+      // Frankfurt
+      {
+        location: [50.1109, 8.6821],
+        size: 0.08,
+      },
+
+      // Virginia
+      {
+        location: [37.4316, -78.6569],
+        size: 0.08,
+      },
+    ],
+
+    onRender: (state) => {
+      state.phi += 0.0035;
+    },
+  };
   return (
     <div className="relative flex flex-col flex-1 min-h-screen items-stretch w-full justify-start bg-zinc-50 font-sans dark:bg-[#08101D] overflow-hidden">
       <nav className="h-18 w-full">
@@ -243,6 +306,46 @@ export default function Home() {
           <div className="isolation w-full rounded-lg border-white/10 bg-white/[0.03] backdrop-blur-sm">
             <AnimatedInfa />
           </div>
+        </div>
+        <div className="Connectivity grid auto-rows-[20rem] md:auto-rows-[36rem] grid-cols-1 gap-4 md:grid md:grid-cols-2">
+          <div className="text-part flex justify-content px-4 py-8 md:px-12 lg:px-16">
+            <div className="container w-full h-full mt-2 md:mt-6 lg:mt-8">
+              <div className="max-w-xl space-y-6">
+                <div>
+                  <p className="text-sm text-gray-400 mb-3">
+                    Launch Globally
+                  </p>
+
+                  <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+                    Deploy isolated workspaces
+                    <br />
+                    close to your users.
+                  </h1>
+
+                  <p className="mt-4 text-gray-400 text-lg leading-relaxed">
+                    <ul>
+                      <li>
+                        <span className="text-green-400">✔ </span>
+                        Lower latency
+                      </li>
+                      <li>
+                        <span className="text-green-400">✔ </span>
+                        Better performance
+                      </li>
+                      <li>
+                        <span className="text-green-400">✔ </span>
+                        Worldwide regions
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative h-[500px] block">
+            <Globe config={globeConfig}/>
+          </div>
+          <div className="footer h-[100px]"></div>
         </div>
       </main >
     </div >
