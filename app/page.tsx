@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MobileMenu } from "./MobileNav"
+import { useState , useEffect } from "react"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { HeroTtile } from './hero-title'
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
@@ -13,10 +14,18 @@ import { MarqueOS } from "./Marque-children-data"
 import { ToolCard } from "./ToolCard"
 import { tools } from "./Tools-children-data"
 import { LaunchWorkspacePreview } from "./bento/LaunchWorkspacePreview"
-import { ToolsTamplete } from "./TampleteTool"
+import { ToolsTamplete , ToolsTampleteSmall } from "./bento/TampleteTool"
 import { Safari } from "@/components/ui/safari"
+import { AnimatedInfa }  from "./bento/AnimatedLine"
 
 export default function Home() {
+  const [screenSize , setScreenSize] = useState(window.innerWidth)
+  useEffect(() => {
+    (() => {
+      const screen = window.innerWidth
+      setScreenSize(screen)
+    })()
+  }, [])
   return (
     <div className="relative flex flex-col flex-1 min-h-screen items-stretch w-full justify-start bg-zinc-50 font-sans dark:bg-[#08101D] overflow-hidden">
       <nav className="h-18 w-full">
@@ -205,21 +214,22 @@ export default function Home() {
           </Marquee>
 
         </div>
-        <div className="featurs auto-rows-[18rem]
+        {/* bento grid */}
+        <div className="featurs auto-rows-[20rem]
         md:auto-rows-[20rem]
         lg:auto-rows-[22rem]
-        grid-cols-1 p-2 md:grid md:grid-cols-2 gap-4">
+        grid grid-cols-1 p-2 md:grid-cols-2 gap-4">
           <div className="w-full launch border-white/10 rounded-lg bg-white/[0.03] backdrop-blur-sm row-span-2">
             <LaunchWorkspacePreview />
           </div>
           <div className="templates rounded-lg w-full p-4 border-white/10 bg-white/[0.03] backdrop-blur-sm flex justify-center items-center">
-            <div className="items w-full h-full items-center grid grid-cols-1 gap:2 place-items-center md:grid md:grid-cols-2  md:gap-2">
+            <div className="items w-full h-auto md:h-full items-center grid grid-cols-1 gap:2 place-items-center md:grid md:grid-cols-2">
               {
-                ToolsTamplete.map((tool) => <ToolCard key={tool.name} obj={tool} className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />)
+                screenSize > 786 ? ToolsTamplete.map((tool) => <ToolCard key={tool.name} obj={tool} className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />) : ToolsTampleteSmall.map((tool) => <ToolCard key={tool.name} obj={tool} className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />)
               }
             </div>
           </div>
-          <div className="browser rounded-lg w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
+          <div className="browser rounded-lg w-full border-white/10 bg-white/[0.03] backdrop-blur-sm flex justify-center items-center">
             <Safari
               url="workspace-7f42.vbox.run"
               imageSrc="/workspace-preview.png"
@@ -230,7 +240,7 @@ export default function Home() {
             <div className="contain"></div>
           </div>
           <div className="isolation w-full rounded-lg border-white/10 bg-white/[0.03] backdrop-blur-sm">
-            <div className="contain"></div>
+            <AnimatedInfa />
           </div>
         </div>
       </main >
