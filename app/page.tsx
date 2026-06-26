@@ -20,6 +20,7 @@ import { AnimatedInfa } from "./bento/AnimatedLine"
 import { IsolatedSessions } from "./bento/IsolatedSessions"
 import { Globe } from "@/components/ui/globe"
 import Footer from "./Footer"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   const [screenSize, setScreenSize] = useState(window.innerWidth)
@@ -339,14 +340,25 @@ export default function Home() {
                     </ul>
                   </p>
                 </div>
+                <div className="flex flex-col h-16 sm:flex-row items-stretch sm:items-center gap-4 p-2 ">
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="w-full h-full sm:w-auto"
+                  >
+                    <Link href="/login" className="cursor-pointer">
+                      Launch your workflow
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-          <div className="relative h-[500px] block">
-            <Globe config={globeConfig}/>
+          <div className="relative h-[500px] block mt-20 lg:mt-2">
+            <Globe config={globeConfig} />
           </div>
           <footer className="footer w-full mt-2">
-            <Footer />            
+            <Footer />
           </footer>
 
         </div>
