@@ -10,8 +10,9 @@ import { RippleButton } from "@/components/ui/ripple-button"
 import { Marquee } from "@/components/ui/marquee"
 import { WorkspaceCard } from "./WorkspaceCard"
 import { MarqueOS } from "./Marque-children-data"
-import { ToolCard } from  "./ToolCard"
+import { ToolCard } from "./ToolCard"
 import { tools } from "./Tools-children-data"
+
 
 export default function Home() {
   return (
@@ -191,18 +192,36 @@ export default function Home() {
         <div className="marque-part w-full h-auto p-2 mt-2 mb-2 md:pt-4 md:pb-4 md:p-2">
           <Marquee pauseOnHover className="[--duration:20s]">
             {
-              MarqueOS.map((os) => <WorkspaceCard key={os.name} obj={os}/>)
+              MarqueOS.map((os) => <WorkspaceCard key={os.name} obj={os} />)
             }
           </Marquee>
-          <br/>
+          <br />
           <Marquee pauseOnHover className="[--duration:20s]" reverse>
             {
-              tools.map((os) => <ToolCard key={os.name} obj={os}/>)
+              tools.map((os) => <ToolCard key={os.name} obj={os} />)
             }
           </Marquee>
 
         </div>
-        <div className="bento-grid-section h-auto w-full p-2 flex flex-col md:grid md:grid-cols-2 md:gap-4">
+        <div className="featurs auto-rows-[18rem]
+        md:auto-rows-[20rem]
+        lg:auto-rows-[22rem]
+        grid-cols-1 p-2 md:grid md:grid-cols-2 gap-4">
+          <div className="w-full launch border-white/10 bg-white/[0.03] backdrop-blur-sm row-span-2">
+            <div className="contain"></div>
+          </div>
+          <div className="templates w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <div className="contain"></div>
+          </div>
+          <div className="browser w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <div className="contain"></div>
+          </div>
+          <div className="infrustructure w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <div className="contain"></div>
+          </div>
+          <div className="isolation w-full border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <div className="contain"></div>
+          </div>
         </div>
       </main>
     </div >
