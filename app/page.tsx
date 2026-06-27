@@ -21,6 +21,7 @@ import { IsolatedSessions } from "./bento/IsolatedSessions"
 import { Globe } from "@/components/ui/globe"
 import Footer from "./Footer"
 import { Button } from "@/components/ui/button"
+import { FAQSection } from "./faq"
 
 export default function Home() {
   const [screenSize, setScreenSize] = useState(window.innerWidth)
@@ -357,12 +358,14 @@ export default function Home() {
           <div className="relative h-[500px] block mt-20 lg:mt-2">
             <Globe config={globeConfig} />
           </div>
-          <footer className="footer w-full mt-2">
-            <Footer />
-          </footer>
-
+        </div>
+        <div className="FAQs h-auto mt-4 md:mt-2">
+              <FAQSection />
         </div>
       </main >
+      <footer className="footer w-full md:mt-2">
+        <Footer />
+      </footer>
     </div >
   );
 }
