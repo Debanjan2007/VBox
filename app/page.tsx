@@ -24,14 +24,54 @@ import { Button } from "@/components/ui/button"
 import { FAQSection } from "./faq"
 
 export default function Home() {
-  const [screenSize, setScreenSize] = useState(window.innerWidth)
+  const [screenSize, setScreenSize] = useState<number>(0)
+
   useEffect(() => {
-    (() => {
-      const screen = window.innerWidth
-      setScreenSize(screen)
-    })()
+    if (typeof window === "undefined") return
+
+    const updateScreenSize = () => {
+      setScreenSize(window.innerWidth)
+    }
+
+    updateScreenSize()
+    window.addEventListener("resize", updateScreenSize)
+
+    return () => {
+      window.removeEventListener("resize", updateScreenSize)
+    }
   }, [])
-  const globeConfig = {
+  interface Marker {
+    location: [number, number]
+    size: number
+  }
+
+  type GlobeRenderState = Record<string, unknown> & {
+    phi: number
+    theta?: number
+  }
+
+  interface GlobeConfig {
+    width: number
+    height: number
+    phi: number
+    theta: number
+    dark: number
+    diffuse: number
+    mapSamples: number
+    mapBrightness: number
+    mapBaseBrightness: number
+    baseColor: [number, number, number]
+    markerColor: [number, number, number]
+    glowColor: [number, number, number]
+    opacity: number
+    scale: number
+    devicePixelRatio: number
+    offset: [number, number]
+    markers: Marker[]
+    onRender: (state: Record<string, unknown>) => void
+  }
+
+  const globeConfig: GlobeConfig = {
     width: 600,
     height: 600,
 
@@ -48,11 +88,11 @@ export default function Home() {
 
     mapBaseBrightness: 0,
 
-    baseColor: [0.1, 0.2, 0.55],
+    baseColor: [0.1, 0.2, 0.55] as [number, number, number],
 
-    markerColor: [0.3, 0.75, 1],
+    markerColor: [0.3, 0.75, 1] as [number, number, number],
 
-    glowColor: [0.15, 0.45, 1],
+    glowColor: [0.15, 0.45, 1] as [number, number, number],
 
     opacity: 0.95,
 
@@ -60,36 +100,36 @@ export default function Home() {
 
     devicePixelRatio: 2,
 
-    offset: [0, 0],
+    offset: [0, 0] as [number, number],
 
     markers: [
       // Mumbai
       {
-        location: [19.0760, 72.8777],
+        location: [19.0760, 72.8777] as [number, number],
         size: 0.08,
       },
 
       // Singapore
       {
-        location: [1.3521, 103.8198],
+        location: [1.3521, 103.8198] as [number, number],
         size: 0.08,
       },
 
       // Frankfurt
       {
-        location: [50.1109, 8.6821],
+        location: [50.1109, 8.6821] as [number, number],
         size: 0.08,
       },
 
       // Virginia
       {
-        location: [37.4316, -78.6569],
+        location: [37.4316, -78.6569] as [number, number],
         size: 0.08,
       },
     ],
 
     onRender: (state) => {
-      state.phi += 0.0035;
+      (state as GlobeRenderState).phi += 0.0035;
     },
   };
   return (
@@ -359,7 +399,7 @@ export default function Home() {
             <Globe config={globeConfig} />
           </div>
         </div>
-        <div className="FAQs h-auto mt-4 md:mt-2">
+        <div className="FAQs h-auto mt-18 md:mt-2">
               <FAQSection />
         </div>
       </main >
