@@ -1,5 +1,9 @@
 <div align="center">
 
+<p align="center">
+  <img src="./public/logo.png" alt="OmniPost Logo" width="120" />
+</p>
+
 # 🚀 VBox
 
 **Launch secure browser workspaces with a single click.**
