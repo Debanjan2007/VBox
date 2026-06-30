@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 🚀 VBox
 
-First, run the development server:
+**Launch secure browser workspaces with a single click.**
+
+*A modern frontend for browser-based operating systems, browsers, and developer environments powered by Kasm.*
+
+</div>
+
+---
+
+## ✨ Features
+
+- 🖥️ Launch browser-based operating systems
+- 🌐 Open isolated browser workspaces instantly
+- ⚡ One-click workspace provisioning
+- 🔒 Authentication powered by Clerk
+- 📦 MongoDB-backed user management
+- 🎨 Modern UI built with Next.js & Tailwind CSS
+- 📱 Responsive design across devices
+- 🔌 Built for seamless Kasm integration
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| Next.js 16 | Framework |
+| React 19 | UI |
+| TypeScript | Type Safety |
+| Tailwind CSS | Styling |
+| Clerk | Authentication |
+| MongoDB + Mongoose | Database |
+
+---
+
+## 📂 Project Structure
+
+```
+app/
+components/
+lib/
+models/
+utils/
+public/
+```
+
+---
+
+## ⚙️ Getting Started
+
+### Clone the repository
+
+```bash
+git clone <repo-url>
+
+cd VBox
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Configure environment variables
+
+Create a `.env.local`
+
+```env
+DATABASE_URI=
+
+DATABASE_PATH=
+
+CLERK_SECRET_KEY=
+
+CLERK_PUBLISHABLE_KEY=
+```
+
+### Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📸 Preview
 
-To learn more about Next.js, take a look at the following resources:
+> Screenshots will be added as the project evolves.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🗺 Roadmap
 
-## Deploy on Vercel
+- [x] Landing Page
+- [x] Authentication
+- [ ] Dashboard
+- [ ] Workspace Launch
+- [ ] Kasm Integration
+- [ ] Workspace History
+- [ ] User Settings
+- [ ] Admin Panel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Contributions are always welcome.
+
+```bash
+Fork → Create Branch → Commit → Push → Pull Request
+```
+
+---
+
+## 📄 License
+
+This project is currently open-source.
+
+Choose an appropriate license before production release.
+
+---
+
+<div align="center">
+
+Built with ❤️ using **Next.js**, **Clerk**, and **MongoDB**
+
+</div>
