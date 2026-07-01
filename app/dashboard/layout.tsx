@@ -21,7 +21,7 @@ export default function Layout({
                         <h1 className="text-lg font-semibold">VBox</h1>
                     </div>
                     <div className="monbile-menu md:hidden flex items-center justify-center">
-                        <MobileMenu />
+                        <MobileMenu page="/dashboard" />
                     </div>
                     <div className="search w-full md:w-1/2 h-full flex items-center justify-center">
                         <SearchBar />
