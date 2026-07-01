@@ -42,7 +42,7 @@ export const SideBaritems = [
     },
 ]
 
-function SideBarItem({ icon, label, href , page }: { icon: React.ReactNode; label: string; href: string; page: string }) {
+export function SideBarItem({ icon, label, href , page }: { icon: React.ReactNode; label: string; href: string; page: string }) {
     const pathname = usePathname();
     return (
         <Link href={href} className={
