@@ -26,7 +26,7 @@ export function MobileMenu({ page }: { page: string }) {
                     ))}
                 </div>
                 <div className="profile p-4 w-full mb-2">
-                    <div className="page flex h-14 w-full gap-2 bg-muted border-1 border-muted-foreground/20 rounded-sm p-2 items-center justify-start">
+                    <div className="page flex h-14 w-full gap-2 bg-muted border-1 border-muted-foreground/20 rounded-sm p-2 items-center justify-start cursor-pointer">
                         <div className="avatar h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
                         </div>
                         <div className="userName flex flex-col">

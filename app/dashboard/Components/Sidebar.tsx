@@ -47,7 +47,7 @@ export function SideBarItem({ icon, label, href , page }: { icon: React.ReactNod
     return (
         <Link href={href} className={
             pathname === page && pathname === href
-                ? "flex w-full h-12 items-center text-muted-foreground/90 flex gap-2 bg-muted/70 p-2 pl-4 rounded-md bg-muted/50 transition-all duration-300"
+                ? "flex w-full h-12 items-center text-muted-foreground/90 flex gap-2 bg-[#0C1E46] p-2 pl-4 rounded-md hover:bg-muted/50 transition-all duration-300"
                 :
             "flex w-full h-12 items-center text-muted-foreground flex gap-2 p-2 pl-4 rounded-md hover:bg-muted/50 transition-all duration-300"}
         >
@@ -66,7 +66,7 @@ export function Sidebar({page}: {page: string}) {
                 ))}
             </div>
             <div className="profile p-4  w-full mb-2">
-                <div className="page flex h-14 w-full gap-2 bg-muted border-1 border-muted-foreground/20 rounded-sm p-2 items-center justify-start">
+                <div className="page flex h-14 w-full gap-2 bg-muted border-1 border-muted-foreground/20 rounded-sm p-2 items-center justify-start cursor-pointer">
                     <div className="avatar h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
                     </div>
                     <div className="userName flex flex-col">
